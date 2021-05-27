@@ -40,12 +40,12 @@ function draw(){
 async function getBackgroundImg(){
 
     // write code to fetch time from API
-    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
+    var response = await fetch("http://worldclockapi.com/api/json/est/now");
     //change the data in JSON format
     var responseJSON= await response.json();
     // write code slice the datetime
    // console.log(responseJSON.datetime);
-    hour = responseJSON.datetime.slice(11,13);
+    hour = responseJSON.currentDateTime.slice(11,13);
     console.log(hour);
     // add conditions to change the background images from sunrise to sunset
   if(hour<=04 && hour>=06){
